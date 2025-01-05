@@ -19,4 +19,4 @@ result.
 
 You can add your own surveys by creating a `your-survey.json` file in the `surveys` directory. Make sure to follow the structure provided in the examples.
 
-`/your-survey` - will be the path to your survey. 
+`/your-survey` - will be the path to your survey.
