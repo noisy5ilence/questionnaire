@@ -8,16 +8,7 @@ export const useDisplayedQuestions = () => useSelector((state) => state.survey.d
 
 export const useAnswers = () => useSelector((state) => state.survey.answers);
 
-export const useIsSurveyComplete = () => {
-  const answers = useAnswers();
-  const question = useQuestion();
-  const questions = useDisplayedQuestions();
-  const index = useIndex();
-
-  if (!question) return false;
-
-  return Boolean(questions.length - 1 === index && answers[question.key]);
-};
+export const useIsSurveyComplete = () => useSelector((state) => state.survey.isComplete);
 
 export const useNextQuestion = () => {
   const dispatch = useDispatch();

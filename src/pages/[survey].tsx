@@ -23,16 +23,10 @@ export async function getStaticPaths() {
 export const getStaticProps = wrapper.getStaticProps(({ dispatch }) => async ({ params }) => {
   const path = join(SURVEYS_PATH, `${params?.survey}.json`);
 
-  try {
-    const content = fs.readFileSync(path, 'utf8');
-    const survey: Survey = JSON.parse(content);
+  const content = fs.readFileSync(path, 'utf8');
+  const survey: Survey = JSON.parse(content);
 
-    dispatch(init({ questions: survey.questions }));
-  } catch (error) {
-    console.log('Survey not found', error);
-
-    dispatch(init({ questions: [] }));
-  }
+  dispatch(init({ questions: survey.questions }));
 
   return { props: {} };
 });

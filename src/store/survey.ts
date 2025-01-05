@@ -6,6 +6,7 @@ export type SurveyState = {
   question?: Question;
   questions: Question[];
   displayedQuestions: Question[];
+  isComplete: boolean;
 };
 
 const initialState: SurveyState = {
@@ -13,12 +14,14 @@ const initialState: SurveyState = {
   answers: {},
   question: undefined,
   questions: [],
-  displayedQuestions: []
+  displayedQuestions: [],
+  isComplete: false
 };
 
 const reduceDisplayedQuestions = (questions: Question[], answers: Answers) => {
   return questions.reduce<Question[]>((displayed, question) => {
     displayed.push(question);
+
     question.answers.forEach((answer) => {
       if (answers[question.key]?.answer !== answer.answer) return;
 
@@ -51,6 +54,23 @@ export const surveySlice = createSlice({
 
       state.answers[question.key] = answer;
       state.displayedQuestions = reduceDisplayedQuestions(state.questions, state.answers);
+
+      const isComplete = Boolean(state.displayedQuestions.length - 1 === state.index && state.answers[question.key]);
+
+      state.isComplete = isComplete;
+
+      if (!isComplete) return state;
+
+      const questionKeys = state.displayedQuestions.reduce<Record<string, string>>((keys, question) => {
+        keys[question.key] = question.key;
+        return keys;
+      }, {});
+
+      Object.keys(state.answers).forEach((key) => {
+        if (questionKeys[key]) return;
+
+        delete state.answers[key];
+      });
     }
   }
 });

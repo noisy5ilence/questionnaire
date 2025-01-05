@@ -27,9 +27,7 @@ const Header: FC<Props> = ({ className }) => {
       >
         <Arrow />
       </button>
-      <Link className='flex size-[16px] items-center justify-center' href='/'>
-        <Logo size={16} />
-      </Link>
+      <Logo size={16} />
       <button
         className={cn('flex size-[24px] rotate-180 items-center justify-center', !goToNextQuestion && 'invisible')}
         onClick={goToNextQuestion}
