@@ -1,13 +1,22 @@
+import Head from 'next/head';
 import fs from 'node:fs';
 import { join } from 'node:path';
 
+import { surveyThemeColor } from '@/constants/colors';
 import { SURVEYS_PATH } from '@/constants/paths';
 import SurveyComponent from '@/features/Survey';
 import { wrapper } from '@/store';
 import { init } from '@/store/survey';
 
 export default function SurveyPage() {
-  return <SurveyComponent />;
+  return (
+    <>
+      <Head>
+        <meta name='theme-color' content={surveyThemeColor} />
+      </Head>
+      <SurveyComponent />
+    </>
+  );
 }
 
 export async function getStaticPaths() {

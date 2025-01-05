@@ -1,6 +1,8 @@
 import { FC } from 'react';
 
+import { defaultThemeColor, surveyThemeColor } from '@/constants/colors';
 import { ChooseAnswer, useAnswers } from '@/features/Survey/hooks/useSurvey';
+import { useThemeColor } from '@/hooks/useThemeColor';
 import { cn, interpolate } from '@/libs/utils';
 
 import Header from './components/Header';
@@ -14,10 +16,12 @@ interface Props {
 const QuestionScreen: FC<Props> = ({ question, onAnswer }) => {
   const answers = useAnswers();
 
+  useThemeColor(question.type === 'info' ? defaultThemeColor : surveyThemeColor);
+
   return (
     <div
       className={cn(
-        'bg-nebula-background min-h-screen w-full shrink-0 pb-10',
+        'bg-nebula-background min-h-dvh w-full shrink-0 pb-10',
         question.type === 'info' ? 'text-nebula-foreground-alt bg-nebula-gradient' : 'text-black'
       )}
     >
