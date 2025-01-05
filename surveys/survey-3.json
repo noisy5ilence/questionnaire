@@ -1,0 +1,157 @@
+{
+  "title": "Personal growth and career development",
+  "questions": [
+    {
+      "type": "radio",
+      "key": "careerStage",
+      "question": "Which best describes your current career stage?",
+      "answers": [
+        {
+          "answer": "Student",
+          "questions": [
+            {
+              "type": "radio",
+              "key": "studyField",
+              "question": "What field are you studying?",
+              "answers": [
+                { "answer": "STEM (Science, Technology, Engineering, Math)" },
+                { "answer": "Arts and Humanities" },
+                { "answer": "Business and Finance" },
+                { "answer": "Social Sciences" },
+                { "answer": "Other" }
+              ]
+            },
+            {
+              "type": "radio",
+              "key": "careerGoals",
+              "question": "Do you have a clear career goal in mind?",
+              "answers": [
+                { "answer": "Yes, I know exactly what I want to do" },
+                { "answer": "I have a general idea, but it’s not specific yet" },
+                { "answer": "No, I’m still exploring my options" }
+              ]
+            }
+          ]
+        },
+        {
+          "answer": "Early Career",
+          "questions": [
+            {
+              "type": "radio",
+              "key": "jobSatisfaction",
+              "question": "How satisfied are you with your current job?",
+              "answers": [
+                { "answer": "Very satisfied" },
+                { "answer": "Somewhat satisfied" },
+                { "answer": "Neutral" },
+                { "answer": "Somewhat dissatisfied" },
+                { "answer": "Very dissatisfied" }
+              ]
+            },
+            {
+              "type": "radio",
+              "key": "skillsDevelopment",
+              "question": "Are you actively working on developing new skills?",
+              "answers": [
+                {
+                  "answer": "Yes",
+                  "questions": [
+                    {
+                      "type": "radio",
+                      "key": "focusSkills",
+                      "question": "What type of skills are you focusing on?",
+                      "answers": [
+                        { "answer": "Technical skills (e.g., programming, data analysis)" },
+                        { "answer": "Soft skills (e.g., communication, leadership)" },
+                        { "answer": "Industry-specific skills" },
+                        { "answer": "Other" }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "answer": "No",
+                  "questions": [
+                    {
+                      "type": "radio",
+                      "key": "reasonNoSkillDevelopment",
+                      "question": "Why aren’t you focusing on skill development?",
+                      "answers": [
+                        { "answer": "I don’t have the time" },
+                        { "answer": "I don’t see the need for it" },
+                        { "answer": "I’m unsure where to start" },
+                        { "answer": "Other" }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "answer": "Mid-Career or Beyond",
+          "questions": [
+            {
+              "type": "radio",
+              "key": "careerSatisfaction",
+              "question": "Looking back, how satisfied are you with your career progression?",
+              "answers": [
+                { "answer": "Very satisfied" },
+                { "answer": "Somewhat satisfied" },
+                { "answer": "Neutral" },
+                { "answer": "Somewhat dissatisfied" },
+                { "answer": "Very dissatisfied" }
+              ]
+            },
+            {
+              "type": "radio",
+              "key": "focusFuture",
+              "question": "What’s your primary focus moving forward?",
+              "answers": [
+                { "answer": "Advancing in my current role or industry" },
+                { "answer": "Exploring new career opportunities" },
+                { "answer": "Focusing on work-life balance" },
+                { "answer": "Planning for retirement" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "key": "workEnvironment",
+      "question": "What type of work environment do you prefer?",
+      "answers": [
+        { "answer": "Remote work" },
+        { "answer": "On-site work" },
+        { "answer": "Hybrid (mix of remote and on-site)" }
+      ]
+    },
+    {
+      "type": "radio",
+      "key": "motivation",
+      "question": "What motivates you the most in your career?",
+      "answers": [
+        { "answer": "Financial stability or growth" },
+        { "answer": "Opportunities to learn and grow" },
+        { "answer": "Recognition and rewards" },
+        { "answer": "Work-life balance" },
+        { "answer": "Making a positive impact" }
+      ]
+    },
+    {
+      "type": "radio",
+      "key": "foundUs",
+      "question": "Where did you hear about us?",
+      "answers": [
+        { "answer": "Friend or colleague" },
+        { "answer": "Social media" },
+        { "answer": "Search engine" },
+        { "answer": "Advertisement" },
+        { "answer": "Other" }
+      ]
+    }
+  ]
+}

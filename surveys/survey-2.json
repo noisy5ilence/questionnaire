@@ -1,124 +1,210 @@
-[
-  {
-    "type": "radio",
-    "key": "gender",
-    "content": "Select your gender:",
-    "answers": [
-      {
-        "content": "Female"
-      },
-      {
-        "content": "Male"
-      }
-    ]
-  },
-  {
-    "type": "radio",
-    "key": "relationship",
-    "content": "So we can get to know you better, tell us about your relationship status.",
-    "answers": [
-      {
-        "content": "Single",
-        "questions": [
-          {
-            "type": "radio",
-            "key": "parent",
-            "content": "Are you a single parent?",
-            "answers": [
-              {
-                "content": "Yes",
-                "substitution": "who have children"
-              },
-              {
-                "content": "No"
-              }
-            ]
-          },
-          {
-            "type": "radio",
-            "key": "singleProblem",
-            "content": "Single {gender} {parent} need a slightly different approach to find their perfect partner. But first, how did you feel in your last relationship?",
-            "answers": [
-              {
-                "content": "I was unhappy with low things were going in my relationship"
-              },
-              {
-                "content": "I was unhappy with parts of my relationship, but some thing were working"
-              },
-              {
-                "content": "I was generally happy with my relationship"
-              },
-              {
-                "content": "I’ve never been in a relationship"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "content": "In a relationship",
-        "questions": [
-          {
-            "type": "radio",
-            "key": "parent",
-            "content": "Are you a parent?",
-            "answers": [
-              {
-                "content": "Yes",
-                "substitution": "who have children"
-              },
-              {
-                "content": "No"
-              }
-            ]
-          },
-          {
-            "type": "radio",
-            "key": "inARelationshipProblem",
-            "content": "{Gender} {parent} need a slightly different approach to improve their relationship. Which statement best describes you?",
-            "answers": [
-              {
-                "content": "I’m very unhappy with how things are going in my relationship"
-              },
-              {
-                "content": "I’m unhappy with parts of my relationship, but some things are working well"
-              },
-              {
-                "content": "I’m generally happy in my relationship"
-              }
-            ]
-          },
-          {
-            "type": "radio",
-            "key": "partnerIntrovertOrExtrovert",
-            "content": "Is your partner an introvert or extrovert?",
-            "answers": [
-              {
-                "content": "Introvert"
-              },
-              {
-                "content": "Extrovert"
-              },
-              {
-                "content": "A bit of both"
-              }
-            ]
-          },
-          {
-            "type": "radio",
-            "key": "partnerGender",
-            "content": "What is your partner’s gender?",
-            "answers": [
-              {
-                "content": "Male"
-              },
-              {
-                "content": "Female"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-]
+{
+  "title": "Lifestyle & Values Insight",
+  "questions": [
+    {
+      "type": "radio",
+      "key": "dailyRoutine",
+      "question": "Which best describes your daily routine?",
+      "answers": [
+        {
+          "answer": "Structured and planned"
+        },
+        {
+          "answer": "Flexible and spontaneous"
+        },
+        {
+          "answer": "A mix of both"
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "key": "sleepHabits",
+      "question": "How many hours of sleep do you typically get?",
+      "answers": [
+        {
+          "answer": "Less than 5 hours"
+        },
+        {
+          "answer": "5-7 hours"
+        },
+        {
+          "answer": "7-9 hours"
+        },
+        {
+          "answer": "More than 9 hours"
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "key": "productivity",
+      "question": "When are you most productive during the day?",
+      "answers": [
+        {
+          "answer": "Morning"
+        },
+        {
+          "answer": "Afternoon"
+        },
+        {
+          "answer": "Evening"
+        },
+        {
+          "answer": "Late night"
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "key": "stressManagement",
+      "question": "How do you usually handle stress?",
+      "answers": [
+        {
+          "answer": "Physical activity (e.g., exercise, yoga)"
+        },
+        {
+          "answer": "Creative outlets (e.g., art, music)"
+        },
+        {
+          "answer": "Talking to friends or family"
+        },
+        {
+          "answer": "Meditation or mindfulness"
+        },
+        {
+          "answer": "I struggle to manage stress"
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "key": "coreValue",
+      "question": "What is your core value?",
+      "answers": [
+        {
+          "answer": "Honesty"
+        },
+        {
+          "answer": "Compassion"
+        },
+        {
+          "answer": "Ambition"
+        },
+        {
+          "answer": "Independence"
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "key": "hobbies",
+      "question": "Which hobbies do you enjoy the most?",
+      "answers": [
+        {
+          "answer": "Reading or writing"
+        },
+        {
+          "answer": "Traveling or exploring new places"
+        },
+        {
+          "answer": "Sports or fitness activities"
+        },
+        {
+          "answer": "Gaming or watching TV"
+        },
+        {
+          "answer": "Creative hobbies (e.g., painting, crafting)"
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "key": "financialGoals",
+      "question": "Which statement best describes your financial goals?",
+      "answers": [
+        {
+          "answer": "I want to save more and spend less"
+        },
+        {
+          "answer": "I’m focused on investing and growing my wealth"
+        },
+        {
+          "answer": "I’m comfortable with my current financial situation"
+        },
+        {
+          "answer": "I need help managing my finances"
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "key": "dietPreference",
+      "question": "Which diet best describes your eating habits?",
+      "answers": [
+        {
+          "answer": "Vegetarian"
+        },
+        {
+          "answer": "Vegan"
+        },
+        {
+          "answer": "Pescatarian"
+        },
+        {
+          "answer": "Omnivorous"
+        },
+        {
+          "answer": "Other"
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "key": "selfImprovement",
+      "question": "What’s your primary focus for self-improvement?",
+      "answers": [
+        {
+          "answer": "Physical health"
+        },
+        {
+          "answer": "Mental well-being"
+        },
+        {
+          "answer": "Career growth"
+        },
+        {
+          "answer": "Relationships"
+        },
+        {
+          "answer": "Personal development (e.g., learning new skills)"
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "key": "howYouFoundUs",
+      "question": "Where did you hear about us?",
+      "answers": [
+        {
+          "answer": "Social media"
+        },
+        {
+          "answer": "Friend or family referral"
+        },
+        {
+          "answer": "Online search"
+        },
+        {
+          "answer": "Advertisement"
+        },
+        {
+          "answer": "Event or conference"
+        },
+        {
+          "answer": "Other"
+        }
+      ]
+    }
+  ]
+}

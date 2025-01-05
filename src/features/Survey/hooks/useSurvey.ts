@@ -1,25 +1,52 @@
 import { useDispatch, useSelector } from '@/store';
 import { back, choseAnswer, next } from '@/store/survey';
 
-export const useSurvey = () => useSelector((state) => state.survey);
+export const useIndex = () => useSelector((state) => state.survey.index);
 
+export const useQuestion = () => useSelector((state) => state.survey.question);
 export const useDisplayedQuestions = () => useSelector((state) => state.survey.displayedQuestions);
+
 export const useAnswers = () => useSelector((state) => state.survey.answers);
+
+export const useIsSurveyComplete = () => {
+  const answers = useAnswers();
+  const question = useQuestion();
+  const questions = useDisplayedQuestions();
+  const index = useIndex();
+
+  if (!question) return false;
+
+  return Boolean(questions.length - 1 === index && answers[question.key]);
+};
 
 export const useNextQuestion = () => {
   const dispatch = useDispatch();
+  const answers = useAnswers();
+  const question = useQuestion();
+  const index = useIndex();
+  const questions = useDisplayedQuestions();
 
-  return dispatch(next());
+  if (!question || !answers[question.key] || questions.length - 1 === index) return undefined;
+
+  return () => dispatch(next());
 };
 
 export const usePreviousQuestion = () => {
   const dispatch = useDispatch();
+  const index = useIndex();
 
-  return dispatch(back());
+  if (!index) return undefined;
+
+  return () => dispatch(back());
 };
 
-export const useChooseAnswer = ({ key, answer }: { key: string; answer: Answer }) => {
+export const useChooseAnswer = () => {
   const dispatch = useDispatch();
 
-  return dispatch(choseAnswer({ key, answer }));
+  return ({ question, answer }: { question: Question; answer: Answer }) => {
+    dispatch(choseAnswer({ question, answer }));
+    dispatch(next());
+  };
 };
+
+export type ChooseAnswer = ReturnType<typeof useChooseAnswer>;

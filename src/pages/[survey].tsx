@@ -1,15 +1,13 @@
 import fs from 'node:fs';
 import { join } from 'node:path';
 
+import { SURVEYS_PATH } from '@/constants/paths';
+import SurveyComponent from '@/features/Survey';
 import { wrapper } from '@/store';
 import { init } from '@/store/survey';
 
-import Survey from '../features/Survey';
-
-const SURVEYS_PATH = join(process.cwd(), 'surveys');
-
 export default function SurveyPage() {
-  return <Survey />;
+  return <SurveyComponent />;
 }
 
 export async function getStaticPaths() {
@@ -27,9 +25,9 @@ export const getStaticProps = wrapper.getStaticProps(({ dispatch }) => async ({ 
 
   try {
     const content = fs.readFileSync(path, 'utf8');
-    const questions: Question[] = JSON.parse(content);
+    const survey: Survey = JSON.parse(content);
 
-    dispatch(init({ questions }));
+    dispatch(init({ questions: survey.questions }));
   } catch (error) {
     console.log('Survey not found', error);
 

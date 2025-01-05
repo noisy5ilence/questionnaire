@@ -1,31 +1,44 @@
 import { FC } from 'react';
 
-import { cn } from '@/libs/utils';
+import { ChooseAnswer, useAnswers } from '@/features/Survey/hooks/useSurvey';
+import { cn, interpolate } from '@/libs/utils';
 
-import Button from './components/Button';
 import Header from './components/Header';
+import Options from './components/Options';
 
 interface Props {
   question: Question;
-  onAnswer: ({ key, answer }: { key: string; answer: Answer }) => void;
+  onAnswer: ChooseAnswer;
 }
 
 const QuestionScreen: FC<Props> = ({ question, onAnswer }) => {
+  const answers = useAnswers();
+
   return (
-    <div className='bg-bg h-screen w-screen shrink-0'>
-      <Header className={cn(question.type === 'info' ? 'text-fg' : 'text-black')} />
-      <div className='mx-auto w-full max-w-[330px]'>
-        <h2 className='text-2xl font-bold leading-7'>{question.question}</h2>
-        {Boolean(question.statement) && <h3 className='mt-[30px] text-lg font-bold'></h3>}
-        <ul className='mt-[30px] flex flex-col gap-[20px]'>
-          {question.answers.map((answer) => (
-            <li key={answer.answer}>
-              <Button className='w-full' onClick={() => onAnswer({ answer, key: question.key })}>
-                {answer.answer}
-              </Button>
-            </li>
-          ))}
-        </ul>
+    <div
+      className={cn(
+        'bg-nebula-background min-h-screen w-full shrink-0 pb-10',
+        question.type === 'info' ? 'text-nebula-foreground-alt bg-nebula-gradient' : 'text-black'
+      )}
+    >
+      <Header className={cn('bg-nebula-background sticky top-0', question.type === 'info' && 'bg-transparent')} />
+      <div className='mx-auto mt-[15px] w-full max-w-[330px]'>
+        <h2 className={cn('text-2xl font-bold leading-7', question.type === 'info' && 'text-center')}>
+          {interpolate(question.question, answers)}
+        </h2>
+        {Boolean(question.statement) && (
+          <h3
+            className={cn(
+              'mt-[30px] text-lg font-bold',
+              question.type === 'info' && 'text-center font-normal text-sm leading-[26px]'
+            )}
+          >
+            {question.statement}
+          </h3>
+        )}
+        {['info', 'radio'].includes(question.type) && (
+          <Options question={question} answers={answers} onAnswer={onAnswer} />
+        )}
       </div>
     </div>
   );

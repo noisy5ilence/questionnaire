@@ -1,21 +1,18 @@
 const enum QuestionType {
-  submit = 'submit',
   radio = 'radio',
   info = 'info'
 }
 
-type Info = {
-  type: QuestionType;
+type Survey = {
   title: string;
-  content: string;
-  action: string;
+  questions: Question[];
 };
 
 type Question = {
   key: string;
   question: string;
   statement?: string;
-  info?: Info[];
+  info?: Question[];
   answers: Answer[];
   type: QuestionType;
 };
@@ -25,3 +22,5 @@ type Answer = {
   substitution?: string;
   questions?: Question[];
 };
+
+type Answers = Record<string, Answer>;

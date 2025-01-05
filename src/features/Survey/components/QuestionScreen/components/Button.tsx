@@ -11,9 +11,10 @@ const Button: FC<Props> = ({ variant = 'default', ...props }) => {
     <button
       {...props}
       className={cn(
-        'rounded-[16px] border border-brd bg-bg-btn py-[21px] text-sm shadow-btn transition-shadow active:shadow-none',
-        variant === 'active' && 'bg-bg-alt text-fg-alt',
-        variant === 'info' && 'bg-bg-btn-alt text-fg-btn-alt shadow-btn-alt',
+        'rounded-[16px] border border-nebula-button-border bg-nebula-button-background py-[21px] px-[16px] text-sm shadow-nebula-button transition-shadow active:shadow-none',
+        variant === 'active' && 'bg-nebula-gradient text-nebula-foreground-alt',
+        variant === 'info' &&
+          'bg-nebula-button-background-alt text-nebula-button-foreground shadow-nebula-button-alt text-lg leading-[21px] py-[13.5] rounded-[12px]',
         props.className
       )}
     />

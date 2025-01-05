@@ -3,26 +3,27 @@ import type { Config } from 'tailwindcss';
 export default {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/features/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
     extend: {
       colors: {
-        bg: 'var(--clr-bg)',
-        fg: 'var(--clr-fg)',
-        'fg-alt': 'var(--clr-fg-alt)',
-        'bg-btn': 'var(--clr-bg-btn)',
-        'fg-btn-alt': 'var(--clr-fg-btn-alt)',
-        'bg-btn-alt': 'var(--clr-bg-btn-alt)',
-        brd: 'var(--clr-brd)'
+        'nebula-background': 'var(--nebula-background)',
+        'nebula-foreground': 'var(--nebula-foreground)',
+        'nebula-foreground-alt': 'var(--nebula-foreground-alt)',
+        'nebula-button-background': 'var(--nebula-button-background)',
+        'nebula-button-foreground': 'var(--nebula-button-foreground)',
+        'nebula-button-background-alt': 'var(--nebula-button-background-alt)',
+        'nebula-button-border': 'var(--nebula-button-border-color)'
       },
       backgroundImage: {
-        'bg-alt': 'var(--clr-bg-alt)'
+        'nebula-gradient': 'var(--nebula-gradient)'
       },
       boxShadow: {
-        btn: 'var(--bs-btn)',
-        'btn-alt': 'var(--bs-btn-alt)'
+        'nebula-button': 'var(--nebula-button-box-shadow)',
+        'nebula-button-alt': 'var(--nebula-button-box-shadow-alt)'
       }
     }
   },
