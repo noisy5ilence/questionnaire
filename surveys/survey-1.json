@@ -1,0 +1,238 @@
+[
+  {
+    "type": "radio",
+    "key": "gender",
+    "question": "Select your gender:",
+    "answers": [
+      {
+        "answer": "Female"
+      },
+      {
+        "answer": "Male"
+      }
+    ]
+  },
+  {
+    "type": "radio",
+    "key": "relationship",
+    "question": "So we can get to know you better, tell us about your relationship status.",
+    "answers": [
+      {
+        "answer": "Single",
+        "questions": [
+          {
+            "type": "radio",
+            "key": "parent",
+            "question": "Are you a single parent?",
+            "answers": [
+              {
+                "answer": "Yes",
+                "substitution": "who have children"
+              },
+              {
+                "answer": "No"
+              }
+            ]
+          },
+          {
+            "type": "radio",
+            "key": "singleProblem",
+            "question": "Single {gender} {parent} need a slightly different approach to find their perfect partner. But first, how did you feel in your last relationship?",
+            "answers": [
+              {
+                "answer": "I was unhappy with low things were going in my relationship"
+              },
+              {
+                "answer": "I was unhappy with parts of my relationship, but some thing were working"
+              },
+              {
+                "answer": "I was generally happy with my relationship"
+              },
+              {
+                "answer": "I’ve never been in a relationship"
+              }
+            ]
+          },
+          {
+            "type": "radio",
+            "key": "traitsTendToOverthink",
+            "question": "Do you tend to overthink?",
+            "info": [
+              {
+                "title": "So how does it work?",
+                "content": "We analyze hundreds of data points to create your unique astrological blueprint. This is combined with AI to tailor-make your astrological insights, based on your answers. We’re going to change your relationship with astrology.",
+                "action": "Next"
+              }
+            ],
+            "answers": [
+              {
+                "answer": "Yes"
+              },
+              {
+                "answer": "No"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "answer": "In a relationship",
+        "questions": [
+          {
+            "type": "radio",
+            "key": "parent",
+            "question": "Are you a parent?",
+            "answers": [
+              {
+                "answer": "Yes",
+                "substitution": "who have children"
+              },
+              {
+                "answer": "No"
+              }
+            ]
+          },
+          {
+            "type": "radio",
+            "key": "inARelationshipProblem",
+            "question": "{Gender} {parent} need a slightly different approach to improve their relationship. Which statement best describes you?",
+            "answers": [
+              {
+                "answer": "I’m very unhappy with how things are going in my relationship"
+              },
+              {
+                "answer": "I’m unhappy with parts of my relationship, but some things are working well"
+              },
+              {
+                "answer": "I’m generally happy in my relationship"
+              }
+            ]
+          },
+          {
+            "type": "radio",
+            "key": "partnerIntrovertOrExtrovert",
+            "question": "Is your partner an introvert or extrovert?",
+            "answers": [
+              {
+                "answer": "Introvert"
+              },
+              {
+                "answer": "Extrovert"
+              },
+              {
+                "answer": "A bit of both"
+              }
+            ]
+          },
+          {
+            "type": "radio",
+            "key": "partnerGender",
+            "question": "What is your partner’s gender?",
+            "answers": [
+              {
+                "answer": "Male"
+              },
+              {
+                "answer": "Female"
+              }
+            ]
+          },
+          {
+            "type": "radio",
+            "key": "partnerPriority",
+            "question": "Do you agree with the statement below?",
+            "statement": "“My partner and I make sex a priority in our relationship”",
+            "answers": [
+              {
+                "answer": "Strongly agree"
+              },
+              {
+                "answer": "Agree"
+              },
+              {
+                "answer": "Neutral"
+              },
+              {
+                "answer": "Disagree"
+              },
+              {
+                "answer": "Strongly disagree"
+              }
+            ]
+          },
+          {
+            "type": "radio",
+            "key": "thinkAboutRelationshipGoals",
+            "question": "When you think about your relationship goals, you feel...?",
+            "answers": [
+              {
+                "answer": "Optimistic! They are totally doable, with some guidance."
+              },
+              {
+                "answer": "Cautious. I’ve struggled before, but I’m hopeful."
+              },
+              {
+                "answer": "I’m feeling a little anxious, honestly."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "radio",
+    "key": "relationshipAboutUs",
+    "question": "Where did you hear about us?",
+    "answers": [
+      {
+        "answer": "Poster or Billboard"
+      },
+      {
+        "answer": "Friend or Family"
+      },
+      {
+        "answer": "Instagram"
+      },
+      {
+        "answer": "Direct Mail or Package Insert"
+      },
+      {
+        "answer": "Online TV or Streaming TV"
+      },
+      {
+        "answer": "TV"
+      },
+      {
+        "answer": "Radio"
+      },
+      {
+        "answer": "Search Engine (Google, Bing, etc.)"
+      },
+      {
+        "answer": "Newspaper or Magazine"
+      },
+      {
+        "answer": "Facebook"
+      },
+      {
+        "answer": "Blog Post or Website Review"
+      },
+      {
+        "answer": "Podcast"
+      },
+      {
+        "answer": "Influencer"
+      },
+      {
+        "answer": "Youtube"
+      },
+      {
+        "answer": "Pinterest"
+      },
+      {
+        "answer": "Other"
+      }
+    ]
+  }
+]
