@@ -32,6 +32,19 @@ const reduceDisplayedQuestions = (questions: Question[], answers: Answers) => {
   }, []);
 };
 
+const filterAnswers = (displayedQuestions: Question[], answers: Answers) => {
+  const questionKeys = displayedQuestions.reduce<Record<string, string>>((keys, question) => {
+    keys[question.key] = question.key;
+    return keys;
+  }, {});
+
+  Object.keys(answers).forEach((key) => {
+    if (questionKeys[key]) return;
+
+    delete answers[key];
+  });
+};
+
 export const surveySlice = createSlice({
   name: 'survey',
   initialState,
@@ -50,27 +63,17 @@ export const surveySlice = createSlice({
       state.question = state.displayedQuestions[state.index];
     },
     choseAnswer(state, { payload: { question, answer } }: PayloadAction<{ question: Question; answer: Answer }>) {
-      if (question.type === 'info') return state;
+      if (question.type === 'info') return;
 
       state.answers[question.key] = answer;
+
       state.displayedQuestions = reduceDisplayedQuestions(state.questions, state.answers);
 
-      const isComplete = Boolean(state.displayedQuestions.length - 1 === state.index && state.answers[question.key]);
+      state.isComplete = Boolean(state.displayedQuestions.length - 1 === state.index);
 
-      state.isComplete = isComplete;
+      if (!state.isComplete) return;
 
-      if (!isComplete) return state;
-
-      const questionKeys = state.displayedQuestions.reduce<Record<string, string>>((keys, question) => {
-        keys[question.key] = question.key;
-        return keys;
-      }, {});
-
-      Object.keys(state.answers).forEach((key) => {
-        if (questionKeys[key]) return;
-
-        delete state.answers[key];
-      });
+      filterAnswers(state.displayedQuestions, state.answers);
     }
   }
 });
