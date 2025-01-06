@@ -12,13 +12,14 @@ const ResumeScreen: FC<Props> = ({ answers, questions }) => {
   return (
     <DefaultLayout title='Your answers:'>
       <ul className='flex flex-col gap-5 p-8 pb-20'>
-        {questions.map(({ key, question, type }, index, array) => {
+        {questions.map(({ key, question, statement, type }, index, array) => {
           if (type === 'info') return null;
 
           return (
             <Fragment key={key}>
               <li className='flex flex-col gap-2'>
                 <h2 className='text-sm'>{interpolate(question, answers)}</h2>
+                {statement && <p className='text-sm'>{interpolate(statement, answers)}</p>}
                 <h3 className='text-lg font-semibold'>{answers[key]?.answer}</h3>
               </li>
               {Boolean(index < array.length - 1) && (
